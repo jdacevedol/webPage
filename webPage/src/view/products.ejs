@@ -17,7 +17,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse container" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="products">PRODUCTS</a>
                     <a class="nav-item nav-link" href="#">SELL</a>
@@ -29,7 +29,42 @@
         </nav>
 
         <%= shop %>
+    <div class="container">
+        <dir class="row">
+            <div class="col-md-6 mt-4 text-center">
+                <table class="table table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>PRICE</th>
+                        <th>STOCK</th>
+                        <th>CATEGORY</th>
+                        <th>SELLER</th>
+                    </tr>
+                    <% for(var i = 0; i < shop.lenght; i++) { %>
+                        <tr>
+                            <td><%= shop[i]%></td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+            <div class="col-md-6  mt-4 card">
+                <form action="/shop" method="POST">
+                    <h4 class="card-title">ADD A NEW ITEM</h4>
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control" placeholder="TITLE">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="NAME">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </dir>
     </body>
+    </div>
 
     <footer class="page-footer">
         <div class="page-footer-fontent fixed-width clearfix">
