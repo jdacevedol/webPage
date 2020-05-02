@@ -6,15 +6,14 @@ module.exports = (app) => {
     });
 
     app.get('/products',(req,res) => {
-        connestion.query('SELECT * FROM Vendedor', (err, result) => {
-            console.log(result)
-            res.render('../view/products.ejs',{
-                shop: result
-            });
+        connestion.query('SELECT * from productos', (err, result) => {
+            if(err) {
+                throw err
+            }else {
+                res.render('../view/products.ejs',{ shop: result });
+            }
         })
     });
-
     app.post('/shop', (req,res) => {
-
     });
 }

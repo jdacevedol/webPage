@@ -28,7 +28,8 @@
             </div>
         </nav>
 
-        <%= shop %>
+        
+        
     <div class="container">
         <dir class="row">
             <div class="col-md-6 mt-4 text-center">
@@ -41,9 +42,14 @@
                         <th>CATEGORY</th>
                         <th>SELLER</th>
                     </tr>
-                    <% for(var i = 0; i < shop.lenght; i++) { %>
+                    <% for(var i = 0; i < shop.length; i++) { %>
                         <tr>
-                            <td><%= shop[i]%></td>
+                            <td><%= shop[i].idProductos%></td>
+                            <td><%= shop[i].nombreP%></td>
+                            <td><%= shop[i].precioP%></td>
+                            <td><%= shop[i].stock%></td>
+                            <td><%= shop[i].categoria%></td>
+                            <td><%= shop[i].Vendedor_Usuario_username%></td>
                         </tr>
                     <% } %>
                 </table>
