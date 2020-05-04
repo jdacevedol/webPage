@@ -20,10 +20,10 @@
             <div class="collapse navbar-collapse container" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="products">PRODUCTS</a>
-                    <a class="nav-item nav-link active" href="buy">BUY</a>
+                    <a class="nav-item nav-link" href="buy">BUY</a>
                     <a class="nav-item nav-link" href="#">HELP</a>
                     <a class="nav-item nav-link" href="#">ABOUT US</a>
-                    <a class="nav-item nav-link" href="updateProfile">PROFILE</a>
+                    <a class="nav-item nav-link active" href="updateProfile">PROFILE</a>
                 </div>
             </div>
         </nav>
@@ -31,25 +31,25 @@
         
         <div class="container">
             <dir class="row">
-                <div class="col-md-6 mt-4 text-center">
+                <div class="col-md-6 mt-4 text-center mx-auto">
                     <dir class="card">
                         <dir class="card-body">
-                            <form method="POST" action="/update/<%= data.idProductos%>" class="card-body">
-                                <h4 class="card-title">ADD A NEW ITEM</h4>
+                            <form method="POST" action="/updateProfile/<%= data.Usuario_username %>" class="card-body">
+                                <h4 class="card-title">HELLO <%= data.nombresU%>, THIS IS YOUR PROFILE</h4>
                                 <div class="form-group"">
-                                    <input type="text" id="first" name="nombreP" class="form-control" value="<%= data.nombreP%>" placeholder="NAME">
+                                    <input type="text" id="first" name="nombresU" class="form-control" value="<%= data.nombresU%>" placeholder="NAME">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" name="precioP" class="form-control" value="<%= data.precioP%>" placeholder="PRICE">
+                                    <input type="text" name="apellidosU" class="form-control" value="<%= data.apellidosU%>" placeholder="LAST NAME">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" name="stock" class="form-control" value="<%= data.stock%>" placeholder="STOCK">
+                                    <input type="tel" name="celular" class="form-control" value="<%= data.celular%>" placeholder="PHONE NUMBER">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="categoria" class="form-control" value="<%= data.categoria%>" placeholder="CATEGORY">
+                                    <input type="email" name="correo" class="form-control" value="<%= data.correo%>" placeholder="EMAIL">
                                 </div>
                                 <button type="submit" class="btn btn-primary">
-                                    UPDATE PRODUCT
+                                    UPDATE PROFILE
                                 </button>
                             </form>
                         </dir>
