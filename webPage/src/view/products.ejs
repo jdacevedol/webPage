@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse container" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="products">PRODUCTS</a>
-                    <a class="nav-item nav-link" href="#">SELL</a>
+                    <a class="nav-item nav-link" href="editProducts">SELL</a>
                     <a class="nav-item nav-link" href="#">HELP</a>
                     <a class="nav-item nav-link" href="#">ABOUT US</a>
                     <a class="nav-item nav-link" href="#">PROFILE</a>
@@ -29,49 +29,58 @@
         </nav>
 
         
-        
-    <div class="container">
-        <dir class="row">
-            <div class="col-md-6 mt-4 text-center">
-                <table class="table table-striped">
-                    <tr>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>PRICE</th>
-                        <th>STOCK</th>
-                        <th>CATEGORY</th>
-                        <th>SELLER</th>
-                    </tr>
-                    <% for(var i = 0; i < shop.length; i++) { %>
+        <div class="container">
+            <dir class="row">
+                <div class="col-md-6 mt-4 text-center">
+                    <table class="table table-striped table-hover">
                         <tr>
-                            <td><%= shop[i].idProductos%></td>
-                            <td><%= shop[i].nombreP%></td>
-                            <td><%= shop[i].precioP%></td>
-                            <td><%= shop[i].stock%></td>
-                            <td><%= shop[i].categoria%></td>
-                            <td><%= shop[i].Vendedor_Usuario_username%></td>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>PRICE</th>
+                            <th>STOCK</th>
+                            <th>CATEGORY</th>
+                            <th>SELLER</th>
+                            <th>ACTIONS</th>
                         </tr>
-                    <% } %>
-                </table>
-            </div>
-            <div class="col-md-6  mt-4 card">
-                <form action="/shop" method="POST">
-                    <h4 class="card-title">ADD A NEW ITEM</h4>
-                    <div class="form-group">
-                        <input type="text" name="title" class="form-control" placeholder="TITLE">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="NAME">
-                    </div>
-                    <div class="form-group">
+                        <% for(var i = 0; i < shop.length; i++) { %>
+                            <tr>
+                                <td><%= shop[i].idProductos%></td>
+                                <td><%= shop[i].nombreP%></td>
+                                <td><%= shop[i].precioP%></td>
+                                <td><%= shop[i].stock%></td>
+                                <td><%= shop[i].categoria%></td>
+                                <td><%= shop[i].Vendedor_Usuario_username%></td>
+                                <td>
+                                    <a href="/delete/<%= shop[i].idProductos %>" class="btn btn-danger"> DELETE</a>
+                                    <a href="/update/<%= shop[i].idProductos %>" class="btn btn-info"> UPDATE</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </table>
+                    <form method="POST" action="/products" class="card-body">
+                        <h4 class="card-title">ADD A NEW ITEM</h4>
+                        <div class="form-group"">
+                            <input type="text" id="first" name="nombreP" class="form-control" placeholder="NAME">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="precioP" class="form-control" placeholder="PRICE">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="stock" class="form-control" placeholder="STOCK">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="categoria" class="form-control" placeholder="CATEGORY">
+                        </div>
                         <input type="submit" class="btn btn-primary">
-                    </div>
-                </form>
-            </div>
-        </dir>
-    </body>
-    </div>
+                    </form>
+                </div>
+            </dir>
+        </div> 
 
+    <script>
+        document.getElementById('first').focus();
+    </script>
+    </body>
     <footer class="page-footer">
         <div class="page-footer-fontent fixed-width clearfix">
             <small class="copyright">All Content Copyright - BLUR. All Rights Reserved</small>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>BLUR</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a href="shop" class="navbar-brand mx-auto">BLUR SHOP</a>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse container" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="products">PRODUCTS</a>
+                    <a class="nav-item nav-link active" href="#">SELL</a>
+                    <a class="nav-item nav-link" href="#">HELP</a>
+                    <a class="nav-item nav-link" href="#">ABOUT US</a>
+                    <a class="nav-item nav-link" href="#">PROFILE</a>
+                </div>
+            </div>
+        </nav>
+
+        
+        <div class="container">
+            <dir class="row">
+                <div class="col-md-6 mt-4 text-center">
+                    <dir class="card">
+                        <dir class="card-body">
+                            <form method="POST" action="/update/<%= data.idProductos%>" class="card-body">
+                                <h4 class="card-title">ADD A NEW ITEM</h4>
+                                <div class="form-group"">
+                                    <input type="text" id="first" name="nombreP" class="form-control" value="<%= data.nombreP%>" placeholder="NAME">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" name="precioP" class="form-control" value="<%= data.precioP%>" placeholder="PRICE">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" name="stock" class="form-control" value="<%= data.stock%>" placeholder="STOCK">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="categoria" class="form-control" value="<%= data.categoria%>" placeholder="CATEGORY">
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    UPDATE PRODUCT
+                                </button>
+                            </form>
+                        </dir>
+                    </dir>
+                </div>
+            </dir>
+        </div> 
+
+    <script>
+        document.getElementById('first').focus();
+    </script>
+    </body>
+    <footer class="page-footer">
+        <div class="page-footer-fontent fixed-width clearfix">
+            <small class="copyright">All Content Copyright - BLUR. All Rights Reserved</small>
+            <small class="credits">Site Designed by <a href="#">BLUR TEAM</a></small>
+        </div>
+    </footer>
+</html>

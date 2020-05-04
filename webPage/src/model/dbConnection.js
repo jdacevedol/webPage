@@ -12,7 +12,7 @@ module.exports = () => {
             console.log(err);
             throw err
         }
-        console.log("CONNECTED TO DB");
+        console.log("CONNECTED TO DB!");
     })
     return db   
 }
